@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenamiento M3 - S3</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <h1>Productos</h1>
+
+    <main>
+        <form id="addProductForm">
+            <h2>Añadir producto</h2>
+            <div class="inputs">
+                <input placeholder="Nombre del producto (Obligatorio)" type="text" required/>
+                <input placeholder="Precio del producto (Obligatorio)" type="number" required/>
+            </div>
+            <button type="submit">Añadir</button>
+        </form>
+        <section>
+            <h2>Lista de productos</h2>
+            <div class="table-wrapper">
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th class="buttons">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <template id="product-row">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="buttons"></td>
+                </tr>
+            </template>
+        </section>
+    </main>
+</body>
+</html>
+<script src="./gestion_api.js"></script>

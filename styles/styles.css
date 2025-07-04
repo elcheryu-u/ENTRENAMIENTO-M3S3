@@ -1,0 +1,149 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    width: auto;
+    background: transparent;
+}
+
+html {
+    font-size: 16px;
+}
+
+:root {
+    --color-primary: rgba(10, 208, 243, 0.1);
+
+    --bg-primary: #eeeeee;
+    --bg-primary-elevated: #ffffff;
+    --bg-secondary-elevated: #efefef;
+
+    --divider-primary: #999999;
+    --divider-secondary: #bbbbbb;
+
+    --action-elevated: #FFFFFF;
+    --action-elevated-hover: rgba(10, 208, 243, 0.1);
+
+    --action-danger-text: #cc2d2d;
+    --action-danger: #ffeaea;
+    --action-danger-hover: #fdcbcb;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-primary);
+}
+
+h1 {
+    text-align: center;
+    padding: 1rem;
+}
+
+section, form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+form .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+}
+
+input,
+button {
+    border: 1px solid var(--divider-primary);
+    padding: .5rem;
+    border-radius: .45rem;
+    transition: .1s ease all;
+}
+
+button {
+    background: var(--action-elevated);
+}
+
+button:hover {
+    background: var(--action-elevated-hover);
+}
+
+button.delete{
+    color: var(--action-danger-text);
+    background: var(--action-danger);
+    border-color: currentColor
+}
+
+button.delete:hover {
+    background: var(--action-danger-hover);
+}
+
+.table-wrapper {
+    border-radius: .75rem;
+    max-width: 500px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid var(--divider-primary);
+}
+
+.table-scroll {
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    padding: 1rem;
+    min-width: 400px;
+    background: var(--bg-primary-elevated);
+    border-radius: .275rem;
+    width: 100%;
+    overflow-x: auto;
+}
+
+table tr {
+    border-bottom: 1px solid var(--divider-secondary);
+}
+
+table td, th {
+    padding: .25rem .55rem;
+    text-align: start;
+}
+
+table th {
+    padding-top: .55rem;
+    background: var(--color-primary);
+}
+
+table td {
+    font-size: .875rem;
+}
+
+table tr:nth-child(odd) {
+    background: var(--bg-secondary-elevated);
+}
+
+table tbody tr:nth-last-child(1) {
+    border-color: transparent;
+}
+
+table tbody tr:nth-last-child(1) td {
+    padding-bottom: .3rem;
+}
+
+table .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+}
+
+table button {
+    border: 1px solid var(--divider-primary);
+    padding: .25rem;
+    border-radius: .25rem;
+}

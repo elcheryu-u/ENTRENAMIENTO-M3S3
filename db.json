@@ -1,0 +1,24 @@
+{
+  "productos": [
+    {
+      "id": "239a",
+      "nombre": "sasd",
+      "precio": 52
+    },
+    {
+      "id": "5962",
+      "nombre": "test",
+      "precio": 25
+    },
+    {
+      "id": "4862",
+      "nombre": "test",
+      "precio": 25
+    },
+    {
+      "id": "10a2",
+      "nombre": "sergio",
+      "precio": 25
+    }
+  ]
+}
