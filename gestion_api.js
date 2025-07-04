@@ -15,6 +15,7 @@ async function getProducts() {
         });
 }
 
+// Add product
 function addProduct(obj) {
     fetch(`${urlAPI}/productos`, {
         method: 'POST',
@@ -29,7 +30,9 @@ function addProduct(obj) {
         .catch(error => console.error("Error:", error));
 }
 
+// Get product data to update
 function getUpdateProductData(product) {
+    // Copy from the product
     let updatedProduct = product;
 
     while (true) {
@@ -88,6 +91,7 @@ El nuevo ${definitions[res]} para ${product.nombre} será "${newValue}".
 
 }
 
+// Update product
 function updateProduct(id, obj) {
     fetch(`${urlAPI}/productos/${id}`, {
         method: 'PUT',
@@ -102,6 +106,7 @@ function updateProduct(id, obj) {
         .catch(error => console.error('Error:', error));
 }
 
+// Delete product
 function deleteProduct(id) {
     fetch(`${urlAPI}/productos/${id}`, {
         method: 'DELETE'
@@ -109,7 +114,7 @@ function deleteProduct(id) {
         .then(res => res.json())
         .then(data => {
             console.log('Product deleted', data);
-            alert(`El producto ${data.id}: ${data.nombre} ha sido eliminado.`)
+            alert(`El producto "${data.nombre}" ha sido eliminado.`)
             window.location.reload();
         })
         .catch(error => console.error("Error", error))
@@ -124,6 +129,7 @@ function validateProduct(product) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Show products in table
     if ("content" in document.createElement("template")) {
         const t = document.querySelector("#product-row");
         const tbody = document.querySelector("tbody");
@@ -149,6 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     tbody.appendChild(clone);
                 });
 
+                // Table buttons event listeners
+
                 document.querySelectorAll(".btn.edit").forEach(btn => {
                     btn.addEventListener("click", () => {
                         const id = btn.dataset.id;
@@ -156,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         const obj = getUpdateProductData(prod);
 
+                        // getUpdateProductData will return a bool or a object
                         if (!obj) return;
 
                         updateProduct(id, obj);
@@ -174,9 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             })
     } else {
-
+        alert('Tu navegador es incompatible. Te recomendamos usar Google Chrome');
+        window.location.reload();
     }
 
+    // Add product form event listener
     const form = document.getElementById('addProductForm');
 
     form.addEventListener('submit', (e) => {
